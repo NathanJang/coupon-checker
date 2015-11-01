@@ -6,6 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('authenticate', { path: '/' });
+  this.route('validate');
 });
 
 export default Router;

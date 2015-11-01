@@ -19,5 +19,21 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  const toAssets = { destDir: 'assets' };
+  const toFonts = { destDir: 'fonts' };
+
+  // app.import(app.bowerDirectory + '/ember-simple-auth/simple-auth.js');
+  app.import(app.bowerDirectory + '/bootstrap/dist/css/bootstrap.css');
+  app.import(app.bowerDirectory + '/bootstrap/dist/css/bootstrap.css.map', toAssets);
+  app.import(app.bowerDirectory + '/bootstrap/dist/css/bootstrap-theme.css');
+  app.import(app.bowerDirectory + '/bootstrap/dist/css/bootstrap-theme.css.map', toAssets);
+  app.import(app.bowerDirectory + '/bootstrap/dist/fonts/glyphicons-halflings-regular.eot', toFonts);
+  app.import(app.bowerDirectory + '/bootstrap/dist/fonts/glyphicons-halflings-regular.svg', toFonts);
+  app.import(app.bowerDirectory + '/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf', toFonts);
+  app.import(app.bowerDirectory + '/bootstrap/dist/fonts/glyphicons-halflings-regular.woff', toFonts);
+  app.import(app.bowerDirectory + '/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2', toFonts);
+  app.import(app.bowerDirectory + '/bootstrap/dist/js/bootstrap.js');
+  app.import(app.bowerDirectory + '/sjcl/sjcl.js');
+
   return app.toTree();
 };
