@@ -16,9 +16,15 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      encryptedPrivateKey: process.env['ENCRYPTED_PRIVATE_KEY']
     }
   };
+
+  const encryptedPrivateKey = process.env.ENCRYPTED_PRIVATE_KEY;
+  if (encryptedPrivateKey) {
+    ENV.APP.encryptedPrivateKey = encryptedPrivateKey;
+  } else {
+    throw new Error('ENCRYPTED_PRIVATE_KEY not set');
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

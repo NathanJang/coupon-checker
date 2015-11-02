@@ -16,6 +16,7 @@ export default Ember.Controller.extend({
   actions: {
     onSubmit(couponId) {
       if (!couponId) { return; }
+      if (this.get('couponIdIsInvalid')) { return; }
       const privateKey = this.get('store').privateKey(); // Assuming it's already there
       const result = hmac(sjcl, privateKey, couponId);
       this.set('hash', result);
